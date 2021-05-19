@@ -18,7 +18,7 @@ const DailyDashboardCard = ({navigate, date}) => {
                 <Text style={styles.subHeading} >Pen down your thoughts here..</Text>
                 <View style = {styles.quoteTextContainer} >
                     <Text style = {styles.quoteText} >{getRandomQuote().text}</Text>
-                    <Text style = {styles.authorText}>--{getRandomQuote().author}</Text>
+                    <Text style = {styles.authorText}>--{getRandomQuote().author != null ? getRandomQuote().author : "Unknown" }</Text>
                 </View>
             </View>
 

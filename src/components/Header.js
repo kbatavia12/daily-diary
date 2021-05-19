@@ -3,13 +3,15 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { globalStyles } from '../../static/styles';
 
 
-const Header = ({ title, save, saveToDB }) => {
+const Header = ({ title, save, saveToDB, addNewNote }) => {
     return (
         <View style={styles.headerContainer} >
             <Text style={styles.headerText}>{title}</Text>
-            {save ? <TouchableOpacity activeOpacity = {0.8} onPress = {saveToDB} style={styles.saveButton}>
+            {save ? <TouchableOpacity activeOpacity={0.8} onPress={saveToDB} style={styles.saveButton}>
                 <Text style={styles.saveButtonText}>Save</Text>
-            </TouchableOpacity> : null}
+            </TouchableOpacity> : <TouchableOpacity activeOpacity={0.8} onPress={addNewNote} style={styles.saveButton}>
+                <Text style={styles.saveButtonText}>Add new</Text>
+            </TouchableOpacity>}
         </View>
     )
 }

@@ -34,7 +34,8 @@ const DiaryPost = ({ route, navigation }) => {
     const saveToDB = () => {
         firebase.database().ref(`/users/${firebase.auth().currentUser.uid}/notes/${route.params.id}`).update({
             noteData: diaryNote.data,
-            date: Date.now()
+            date: Date.now(),
+            // lastEdited: diaryNote.lastEdited
         })
     }
 
